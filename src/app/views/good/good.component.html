@@ -1,0 +1,13 @@
+<div class="row">
+  <div class="col-2"></div>
+  <div class="col-4 d-flex flex-column justify-content-between align-items-center">
+    <img src="{{good.image}}" class="mb-1 w-100">
+    <div class="price border border-black border-2 w-25 text-center">Цена: {{ good.price }} руб.</div>
+  </div>
+  <div class="col-4 d-flex flex-column justify-content-between align-items-center">
+    <h5 class="card-title mb-2">{{ good.title }}</h5>
+    <p class="card-text">{{ good.description }}</p>
+    <button class="btn btn-primary px-5 py-2 d-block" [routerLink]="'/order'" [queryParams]="{title: good.title}">Купить</button>
+  </div>
+  <div class="col-2"></div>
+</div>

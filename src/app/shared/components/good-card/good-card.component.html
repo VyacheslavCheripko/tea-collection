@@ -1,0 +1,9 @@
+<div class="card">
+  <img src="{{good.image}}" class="mb-1"
+       alt="Детокс чай лайм">
+  <div class="card-body ps-4 pt-3">
+    <h5 class="card-title">{{ good.title }}</h5>
+    <p class="card-text">{{ good.description | goodDescriptionPipe}}</p>
+    <button class="btn btn-primary px-5 py-2 d-block" (click)="getDetails()">Подробнее</button>
+  </div>
+</div>

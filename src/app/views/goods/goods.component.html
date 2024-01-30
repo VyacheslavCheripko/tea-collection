@@ -1,0 +1,10 @@
+<div class="h2 text-center pt-4 mb-5">Наши чайные коллекции</div>
+<div class="container cards-container mb-5 ">
+  <div class="row g-4">
+    <good-card *ngFor="let good of goods" [good]="good" class="col-lg-4 col-md-6"></good-card>
+  </div>
+  <div *ngIf="loading" class="loader-bg">
+    <div class="loader"></div>
+  </div>
+</div>
+

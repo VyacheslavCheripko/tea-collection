@@ -1,0 +1,24 @@
+.ui-state-active{
+  background: linear-gradient(360deg, #076BFF 0%, #007BFF 100%);
+}
+.ui-accordion-header-active:after{
+  content: url("./assets/images/arrow-up.png");
+  position: absolute;
+  right: 29px;
+}
+.ui-accordion-header-collapsed:after{
+  content: url("./assets/images/arrow-down.png");
+  position: absolute;
+  right: 29px;
+}
+label{
+  display: block;
+  width: 100%;
+}
+.input{
+  display: block;
+  width: 100%;
+}
+
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';

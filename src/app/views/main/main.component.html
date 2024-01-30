@@ -1,0 +1,75 @@
+<div class="container main-container p-0">
+  <div class="mt-5 mb-5">
+    <div class="text-center">
+      <img src="../../../assets/images/first-image.png" class="w-100" alt="Первое изображение">
+    </div>
+  </div>
+</div>
+<div class="container-fluid mb-5 questions-container">
+  <div class="h2 text-center pt-4 pb-4">Ответы на часто задаваемые вопросы</div>
+  <div class="row justify-content-center">
+    <div class="col-xxl-6 col-lg-7 col-md-8 col-sm-10 col-xs-11 col-12 px-md-4 px-0">
+      <div ngbAccordion>
+        <div ngbAccordionItem>
+          <h2 ngbAccordionHeader>
+            <button ngbAccordionButton>Собираете ли вы подарочные боксы?</button>
+          </h2>
+          <div ngbAccordionCollapse>
+            <div ngbAccordionBody>
+              <ng-template>Да, у нас есть такая услуга. Мы можем собрать подарочный бокс на любой вкус, объем и
+                стоимость!</ng-template>
+            </div>
+          </div>
+        </div>
+        <div ngbAccordionItem>
+          <h2 ngbAccordionHeader>
+            <button ngbAccordionButton>Сколько у вас разновидностей чая?</button>
+          </h2>
+          <div ngbAccordionCollapse>
+            <div ngbAccordionBody>
+              <ng-template>Около ста. То есть можем удовлетворить любой вкус!</ng-template>
+            </div>
+          </div>
+        </div>
+        <div ngbAccordionItem>
+          <h2 ngbAccordionHeader>
+            <button ngbAccordionButton>В какой срок осуществляется доставка?</button>
+          </h2>
+          <div ngbAccordionCollapse>
+            <div ngbAccordionBody>
+              <ng-template>В пределах города доставка обычно занимает до двух часов.</ng-template>
+            </div>
+          </div>
+        </div>
+        <div ngbAccordionItem>
+          <h2 ngbAccordionHeader>
+            <button ngbAccordionButton>У вас обновляется ассортимент?</button>
+          </h2>
+          <div ngbAccordionCollapse>
+            <div ngbAccordionBody>
+              <ng-template>Да, мы постоянно работаем над этим.</ng-template>
+            </div>
+          </div>
+        </div>
+        <div ngbAccordionItem>
+          <h2 ngbAccordionHeader>
+            <button ngbAccordionButton>Какого объема у вас пачки чая?</button>
+          </h2>
+          <div ngbAccordionCollapse>
+            <div ngbAccordionBody>
+              <ng-template>Разного. От 100 грамм до трех килограмм.</ng-template>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="popup d-flex justify-content-center align-items-center flex-column" *ngIf="isShowPopup">
+  <div class="popup-text pb-5 fs-1 text-white">
+    Посмотрите наши чайные коллекции
+  </div>
+  <div class="popup-action">
+    <button class="btn btn-primary px-3 px-sm-4 px-md-5 py-2" (click)="show()">Смотреть</button>
+  </div>
+</div>

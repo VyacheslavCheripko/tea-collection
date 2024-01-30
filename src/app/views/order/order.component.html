@@ -1,0 +1,70 @@
+<form class="container-fluid p-0 order-container" [formGroup]="orderForm" (ngSubmit)="order()">
+  <div class="h2 text-center pt-4 pb-5 mb-2" id="order-header" *ngIf="!isSuccessOrder">Сделать заказ</div>
+  <div class="h2 text-center pt-4 pb-5 mb-2" id="order-success" *ngIf="isSuccessOrder">Спасибо за заказ!</div>
+  <div class="row mt-1" id="order-form" *ngIf="!isSuccessOrder">
+    <div class="col p-0"></div>
+    <div class="col-xxl-5 col-lg-6 col-md-7 col-sm-8  col-10 p-0">
+      <div class="row mb-3 g-md-4 g-2 d-flex justify-content-center">
+        <div class="col-4">
+          <label for="input-good" class="form-label">Товар</label>
+          <input type="text" class="input rounded-1 border-1 border" id="input-good" formControlName="productTitle" readonly>
+        </div>
+      </div>
+      <div class="row mb-3 g-md-4 g-2" formGroupName="person">
+        <div class="col-4">
+          <label for="input-firstname" class="form-label">Имя</label>
+          <input type="text" class="input rounded-1 border-1 border" id="input-firstname" formControlName="firstName"
+                 [class]="{'border-danger': (firstName?.touched || firstName?.dirty) && firstName?.invalid }">
+          <div class="text-danger" *ngIf="(firstName?.touched || firstName?.dirty) && firstName?.invalid">Имя не может быть пустым и должно содержать только буквы</div>
+        </div>
+        <div class="col-4">
+          <label for="input-lastname" class="form-label">Фамилия</label>
+          <input type="text" class="input rounded-1 border-1 border" id="input-lastname" formControlName="lastName"
+                 [class]="{'border-danger': (lastName?.touched || lastName?.dirty) && lastName?.invalid}">
+          <div class="text-danger" *ngIf="(lastName?.touched || lastName?.dirty) && lastName?.invalid">Фамилия не может быть пустой и должна содержать только буквы</div>
+        </div>
+        <div class="col-4">
+          <label for="input-phone" class="form-label">Телефон</label>
+          <input type="text" class="input rounded-1 border-1 border" id="input-phone" formControlName="phone"
+                 [class]="{'border-danger': (phone?.touched || phone?.dirty) && phone?.invalid}">
+          <div class="text-danger" *ngIf="(phone?.touched || phone?.dirty) && phone?.invalid">Телефон не может быть пустым и должен содержать ровно 11 цифр</div>
+        </div>
+      </div>
+      <div formGroupName="fullAddress">
+        <div class="row mb-3 g-md-4 g-2">
+          <div class="col-6">
+            <label for="input-country" class="form-label">Страна</label>
+            <input type="text" class="input rounded-1 border-1 border" id="input-country" formControlName="country"
+                 [class]="{'border-danger': (country?.touched || country?.dirty) && country?.invalid}">
+            <div class="text-danger" *ngIf="(country?.touched || country?.dirty) && country?.invalid">Страна не может быть пустой и должна содержать только буквы</div>
+          </div>
+          <div class="col-6">
+            <label for="input-index" class="form-label">Индекс</label>
+            <input type="text" class="input rounded-1 border-1 border" id="input-index" formControlName="index"
+                 [class]="{'border-danger': (index?.touched || index?.dirty) && index?.invalid}">
+            <div class="text-danger" *ngIf="(index?.touched || index?.dirty) && index?.invalid">Индекс не может быть пустым и должен содержать только цифры</div>
+          </div>
+        </div>
+        <div class="row mb-4">
+          <div class="col-12">
+            <label for="input-address" class="form-label">Адрес</label>
+            <input type="text" class="input rounded-1 border-1 border" id="input-address" formControlName="address"
+                 [class]="{'border-danger': (address?.touched || address?.dirty) && address?.invalid}">
+            <div class="text-danger" *ngIf="(address?.touched || address?.dirty) && address?.invalid">Адрес не может быть пустым и должен содержать только буквы, цифры, пробелы, дефис и слеш</div>
+          </div>
+        </div>
+      </div>
+      <div class="row mb-4">
+        <div class="col-12">
+          <label for="input-comment" class="form-label">Комментарий</label>
+          <textarea class="input rounded-1 border-1 border" id="input-comment" formControlName="comment"></textarea>
+        </div>
+      </div>
+    </div>
+    <div class="col p-0"></div>
+  </div>
+  <div class="d-flex align-items-center flex-column">
+    <button class="btn btn-primary px-3 px-sm-4 px-md-5 py-2 w-25" id="send-button" [disabled]="orderForm.invalid || !isShowAction">Отправить</button>
+    <div class="text-danger pt-3" *ngIf="isShowError">Произошла ошибка. Попробуйте еще раз</div>
+  </div>
+</form>
